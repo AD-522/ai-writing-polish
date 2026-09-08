@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Writing Polisher</title>
+    <link rel="stylesheet" href="{{urlfor('static',filename='style.css')}}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">✍️ AI Writing Polisher</div>
+
+        <div class="scene-bar">
+            <label for="scene">场景：</label>
+            <select id="scene">
+                <option value="academic">📝 学术论文</option>
+                <option value="email">✉️ 邮件沟通</option>
+                <option value="job">💼 求职信</option>
+                <option value="daily">💬 日常表达</option>
+            </select>
+        </div>
+
+       <div class="result-area">
+            <div class="result-block">
+                <h3>📝 原文</h3>
+                <div class="original-content empty" id="original">
+                    这里会显示你输入的原文...
+                </div>
+            </div>
+
+            <div class="result-block">
+                <h3>✨ 润色结果</h3>
+                <div class="result-content empty" id="result">
+                    输入英文文本并点击"润色"，结果将显示在这里...
+                </div>
+            </div>
+        </div>
+        <div class="input-area">
+            <textarea id="input" placeholder="在这里输入你要润色的英文..."></textarea>
+            <button class="btn-polish" id="polishBtn" onclick="polish()">润色</button>
+        </div>
+
+    </div>
+        <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

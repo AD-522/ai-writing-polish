@@ -1,0 +1,146 @@
+* {
+    /* 统一盒模型，避免内边距和边框撑大元素尺寸。 */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* 让主面板在页面中水平、垂直居中。 */
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #f5f5f5;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    /* 主容器使用纵向布局，顶部是标题，底部是输入区。 */
+    width: 90%;
+    max-width: 800px;
+    height: 85vh;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.header {
+    /* 页面标题区域。 */
+    background: #4a6fa5;
+    color: white;
+    padding: 16px 24px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.scene-bar {
+    /* 场景选择区域。 */
+    padding: 12px 24px;
+    background: #fafafa;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.scene-bar label {
+    font-size: 14px;
+    color: #555;
+    font-weight: 500;
+}
+
+.scene-bar select {
+    padding: 6px 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+
+.result-area {
+    /* 结果较长时只在内容区域滚动。 */
+    flex: 1;
+    padding: 24px;
+    overflow-y: auto;
+    background: #fafafa;
+}
+
+.result-area h3 {
+    color: #333;
+    margin-bottom: 12px;
+    font-size: 16px;
+}
+
+.result-content {
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 16px;
+    line-height: 1.8;
+    color: #333;
+    white-space: pre-wrap;
+    min-height: 100px;
+}
+
+.result-content.empty {
+    color: #aaa;
+    font-style: italic;
+}
+
+.input-area {
+    /* 输入框和提交按钮保持在同一行。 */
+    padding: 16px 24px;
+    border-top: 1px solid #eee;
+    display: flex;
+    gap: 12px;
+    align-items: flex-end;
+}
+
+.input-area textarea {
+    flex: 1;
+    height: 80px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    resize: none;
+    font-size: 14px;
+    outline: none;
+    font-family: inherit;
+}
+
+.input-area textarea:focus {
+    border-color: #4a6fa5;
+}
+
+.btn-polish {
+    padding: 12px 24px;
+    background: #4a6fa5;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    white-space: nowrap;
+}
+
+.btn-polish:hover {
+    background: #3a5a8a;
+}
+
+.btn-polish:disabled {
+    background: #aaa;
+    cursor: not-allowed;
+}
+
+.loading {
+    color: #4a6fa5;
+    font-style: italic;
+}
