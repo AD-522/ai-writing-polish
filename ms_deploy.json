@@ -2,5 +2,6 @@
   "$schema": "https://modelscope.cn/api/v1/studios/deploy_schema.json",
   "sdk_type": "docker",
   "resource_configuration": "platform/2v-cpu-16g-mem",
-  "port": 5000
+  "port": 7860,
+  "command": "gunicorn app:app --bind 0.0.0.0:7860 --workers 1 --timeout 120"
 }
